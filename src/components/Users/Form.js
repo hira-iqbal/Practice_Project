@@ -50,10 +50,10 @@ const Form = (props) => {
 
 
   return(
-    <div>
-      {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}
-      <Card>
-        <form className="form" onSubmit={SubmitHandler}>
+    [
+      error && (<ErrorModal key='error-model' title={error.title} message={error.message} onConfirm={errorHandler}/>),
+      <Card key='user-card' className="form">
+        <form onSubmit={SubmitHandler}>
           <label htmlFor="username" >User Name</label>
           <input id="username" type="text" value={enteredUserName} onChange={NameChangeHandler} />
           <label htmlFor="age">Age (Years)</label>
@@ -61,7 +61,7 @@ const Form = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    ]
   );
 };
 export default Form;
