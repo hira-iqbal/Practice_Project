@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AddUser.css';
 import Form from './Form';
 
+
 const AddUser = (props) => {
 
   const AddUserHandler = (enteredUserDetail) => {
@@ -9,9 +10,15 @@ const AddUser = (props) => {
       ...enteredUserDetail,
       id: Math.random().toString()
     };
+    debugger
+    props.onAddUser(UserDetail);
   };
+
   return (
-    <Form onAddUser={AddUserHandler} />
-  );
+    <div>
+     <Form onSaveUser={AddUserHandler} />
+    </div>
+
+    );
 };
 export default AddUser;
