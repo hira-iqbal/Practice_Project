@@ -20,7 +20,7 @@ const OverLay = (props) => {
       </div>
 
       <footer className="actions">
-        <Button onClick={props.onConfirm}>Okay</Button>
+        <Button onClick={props.onClick}>Okay</Button>
       </footer>
     </Card>
   );
