@@ -10,7 +10,6 @@ const AddUser = (props) => {
       ...enteredUserDetail,
       id: Math.random().toString()
     };
-    debugger
     props.onAddUser(UserDetail);
   };
 

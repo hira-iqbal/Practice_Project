@@ -3,6 +3,7 @@ import './Form.css';
 import Card from '../UI/Card';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModel';
+import Wrapper from '../Helpers/Wrapper/Wrapper';
 const Form = (props) => {
   const [enteredUserName, setEnteredUserName] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
@@ -50,10 +51,10 @@ const Form = (props) => {
 
 
   return(
-    [
-      error && (<ErrorModal key='error-model' title={error.title} message={error.message} onConfirm={errorHandler}/>),
-      <Card key='user-card' className="form">
-        <form onSubmit={SubmitHandler}>
+    <Wrapper>
+      {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}
+      <Card>
+        <form className="form" onSubmit={SubmitHandler}>
           <label htmlFor="username" >User Name</label>
           <input id="username" type="text" value={enteredUserName} onChange={NameChangeHandler} />
           <label htmlFor="age">Age (Years)</label>
@@ -61,7 +62,7 @@ const Form = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    ]
+    </Wrapper>
   );
 };
 export default Form;
