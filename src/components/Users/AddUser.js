@@ -14,10 +14,9 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <>
      <Form onSaveUser={AddUserHandler} />
-    </div>
-
-    );
+    </>
+  );
 };
 export default AddUser;
